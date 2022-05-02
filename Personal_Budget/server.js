@@ -5,14 +5,15 @@ const app = express();
 
 dotenv.config();
 
+const envelopesRouter = require('./routes/envelopes.route');
+
 const PORT = process.env.PORT;
 
 app.use(logger("dev"));
 app.use(express.json());
 
-app.get('/', (req,res) => {
-    res.send("Yo MOFO");
-})
+app.use('/envelopes', envelopesRouter);
+
 
 app.listen(PORT, () =>{
     console.log(`Server running on ${PORT}...`);
