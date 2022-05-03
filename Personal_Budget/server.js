@@ -9,7 +9,7 @@ const envelopesRouter = require('./routes/envelopes.route');
 
 const PORT = process.env.PORT;
 
-app.use(logger("dev"));
+app.use(logger("tiny"));
 app.use(express.json());
 
 app.use('/envelopes', envelopesRouter);

@@ -31,5 +31,61 @@ exports.addEnvelope = async (req, res) => {
     }
   };
 
+exports.getEnvelopeById =  async (req, res) => {
+  try {
+    const { id } = req.params;
+    // mock retrieval of a real DB with async/await
+    const envelopes = await dbEnvelopes;
+    const envelope = findById(envelopes, id);
 
+    if (!envelope) {
+      return res.status(404).send({
+        message: "Envelope Not Found",
+      });
+    }
+    return res.status(200).send(envelope);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
 
+exports.updateEnvelope = async (req, res) => {
+  try {
+    const { title, budget } = req.body;
+    const { id } = req.params;
+    // mimicking the retrieval of a real DB with async/await
+    const envelopes = await dbEnvelopes;
+    const envelope = findById(envelopes, id);
+
+    if (!envelope) {
+      return res.status(404).send({
+        message: "Envelope Not Found",
+      });
+    }
+
+    envelope.title = title;
+    envelope.budget = budget;
+    res.status(201).send(envelopes);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
+
+exports.deleteEnvelope = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const envelopes = await dbEnvelopes;
+    const envelope = findById(envelopes, id);
+
+    if (!envelope) {
+      return res.status(404).send({
+        message: "Envelope Not Found",
+      });
+    }
+
+    const updatedEnvelopes = deleteById(envelopes, id);
+    return res.status(204).send(updatedEnvelopes);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
