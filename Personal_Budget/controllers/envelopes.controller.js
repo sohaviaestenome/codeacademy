@@ -89,3 +89,33 @@ exports.deleteEnvelope = async (req, res) => {
     res.status(500).send(err);
   }
 };
+
+exports.transfer = async (req, res) => {
+	try {
+    const envelopes = await dbEnvelopes;
+		const { fromId, toId } = req.params;
+		const { amount } = req.body
+
+		const originEnv = findById(envelopes, fromId);
+		const destinationEnv = findById(envelopes, toId);
+
+    if (!originEnv || !destinationEnv) {
+      return res.status(404).send({
+        message: "Envelope Not Found",
+      });
+		}
+
+		if (originEnv.budget < amount) {
+			return res.status(400).send({
+				message: "Amount to transfer exceeds envelope budget funds"
+			})
+		}
+
+		originEnv.budget -= amount;
+		destinationEnv.budget += amount;
+
+		return res.status(201).send(originEnv);
+	} catch (err) {
+		res.status(500).send(err);
+	}
+}
