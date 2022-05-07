@@ -109,6 +109,7 @@ exports.getEnvelopeById = async (req, res) => {
 	const envelopeQuery  = "SELECT * FROM envelopes WHERE envelopes.id = $1";
 	const transactionQuery = "INSERT INTO transactions(title, amount, date, envelope_id)VALUES($1, $2, $3, $4) RETURNING *";
 	const updateEnvQuery = "UPDATE envelopes SET budget = budget - $1 WHERE id = $2 RETURNING *";
+	
 
   try {
 		// SQL TRANSACTION
