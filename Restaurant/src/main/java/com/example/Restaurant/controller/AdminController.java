@@ -7,6 +7,7 @@ import com.example.Restaurant.model.Review;
 import com.example.Restaurant.repository.RestaurantRepository;
 import com.example.Restaurant.repository.ReviewRepository;
 import com.example.Restaurant.repository.UserRepository;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping
+@RequestMapping("/admin")
 @RestController
 public class AdminController {
     private final ReviewRepository reviewRepository;
@@ -32,13 +33,14 @@ public class AdminController {
     }
 
     @GetMapping("/reviews")
-    public List<Review> getReviewsByStatus(@RequestParam String status) {
+    public List<Review> getReviewsByStatus(@RequestParam String review_status) {
         AdminReviewStatus reviewStatus = AdminReviewStatus.PENDING;
         try {
-            reviewStatus = AdminReviewStatus.valueOf(status.toUpperCase());
-        } catch (IllegalArgumentException exception) {
+            reviewStatus = AdminReviewStatus.valueOf(review_status.toUpperCase());
+        } catch (IllegalArgumentException ex) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
+
         return reviewRepository.findReviewByStatus(reviewStatus);
     }
 
@@ -117,5 +119,6 @@ public class AdminController {
         restaurantRepository.save(restaurant);
     }
 }
+
 
 

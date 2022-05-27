@@ -69,11 +69,11 @@ public class RestaurantController {
 
         Iterable<Restaurant> restaurants = Collections.EMPTY_LIST;
         if (allergy.equalsIgnoreCase("peanut")) {
-            restaurants = restaurantRepository.findRestaurantsByAddressAndPeanut_ScoreNotNullOrderByPeanut_Score(address);
+            restaurants = restaurantRepository.findRestaurantsByAddressAndPeanutScoreNotNullOrderByPeanutScore(address);
         } else if (allergy.equalsIgnoreCase("dairy")) {
-            restaurants = restaurantRepository.findRestaurantsByAddressAndDairy_ScoreNotNullOrderByDairy_Score(address);
+            restaurants = restaurantRepository.findRestaurantsByAddressAndDairyScoreNotNullOrderByDairyScore(address);
         } else if (allergy.equalsIgnoreCase("egg")) {
-            restaurants = restaurantRepository.findRestaurantsByAddressAndEgg_ScoreNotNullOrderByEgg_Score(address);
+            restaurants = restaurantRepository.findRestaurantsByAddressAndEggScoreNotNullOrderByEggScore(address);
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }

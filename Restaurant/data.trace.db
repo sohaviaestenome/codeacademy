@@ -4,3 +4,33 @@ drop table if exists user CASCADE  [42001-212]
 2022-05-27 22:53:36 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id)) [42001-212]
+2022-05-27 23:04:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-212]
+2022-05-27 23:04:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id)) [42001-212]
+2022-05-27 23:08:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-212]
+2022-05-27 23:08:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id)) [42001-212]
+2022-05-27 23:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-212]
+2022-05-27 23:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id)) [42001-212]
+2022-05-27 23:15:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-212]
+2022-05-27 23:15:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id)) [42001-212]
+2022-05-27 23:16:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-212]
+2022-05-27 23:16:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, address integer, dairy_allergy boolean, egg_allergy boolean, peanut_allergy boolean, name varchar(255), primary key (id)) [42001-212]
