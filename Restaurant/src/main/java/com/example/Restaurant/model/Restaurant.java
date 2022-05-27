@@ -1,7 +1,7 @@
 package com.example.Restaurant.model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 
@@ -9,7 +9,9 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="RESTAURANT")
-@NoArgsConstructor
+@Getter
+@Setter
+@RequiredArgsConstructor
 public class Restaurant {
 
     @Id
@@ -17,18 +19,24 @@ public class Restaurant {
     private Long id;
 
     @Column(name="Name")
-    @Getter
-    @Setter
     private String name;
 
     @Column(name="Address")
-    @Getter
-    @Setter
     private String address;
 
     @Column(name="Cuisine")
-    @Getter
-    @Setter
     private String cuisine;
+
+    @Column(name="Overall_Score")
+    private String overallScore;
+
+    @Column(name="Egg_Score")
+    private String eggScore;
+
+    @Column(name="Peanut_Score")
+    private String peanutScore;
+
+    @Column(name="Dairy_Score")
+    private String dairyScore;
 
 }

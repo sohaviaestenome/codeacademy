@@ -1,42 +1,42 @@
 package com.example.Restaurant.model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Table(name="REVIEW")
 public class Review {
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(name="Name")
+    @Column(name="Reviewer")
     @Getter
     @Setter
-    private String name;
+    private String reviewer;
 
     @Column(name="Restaurant_Id")
     @Getter
-    private Long restaurant_id;
+    private Long restaurantId;
 
     @Column(name="Peanut_Score")
     @Getter
     @Setter
-    private Integer peanut_score;
+    private Integer peanutScore;
 
     @Column(name="Egg_Score")
     @Getter
     @Setter
-    private Integer egg_score;
+    private Integer eggScore;
 
     @Column(name="Dairy_Score")
     @Getter
     @Setter
-    private Integer dairy_score;
+    private Integer dairyScore;
 
     @Column(name="Commentary")
     @Getter

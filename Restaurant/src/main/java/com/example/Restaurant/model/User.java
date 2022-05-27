@@ -3,18 +3,20 @@ package com.example.Restaurant.model;
 
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="USER")
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class User {
 
     @Id
     @GeneratedValue
+    @Getter
+    @Setter
     private Long id;
 
     @Column(name="Name")
@@ -22,10 +24,10 @@ public class User {
     @Setter
     private String name;
 
-    @Column(name="Zip_Code")
+    @Column(name="Address")
     @Getter
     @Setter
-    private Integer zip_code;
+    private Integer address;
 
     @Column(name="Peanut_Allergy")
     @Getter
@@ -41,6 +43,4 @@ public class User {
     @Getter
     @Setter
     private Boolean isDairyAllergy;
-
-
 }
