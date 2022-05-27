@@ -24,9 +24,6 @@ public class Restaurant {
     @Column(name="Address")
     private String address;
 
-    @Column(name="Cuisine")
-    private String cuisine;
-
     @Column(name="Overall_Score")
     private String overallScore;
 
