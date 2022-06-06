@@ -51,7 +51,7 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-            <ContactsPage contacts= {contacts} />
+            <ContactsPage contacts= {contacts} addContact={ addContact } />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             <AppointmentsPage  
