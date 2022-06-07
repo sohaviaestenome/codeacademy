@@ -15,7 +15,7 @@ import { InputLabel, MenuItem, Select } from '@mui/material';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import user action and view update functions from utils dir
-import { formSetter } from '../utils';
+import { createExpense, fetchExpenses, formSetter, updateExpense } from '../utils';
 
 const theme = createTheme();
 
@@ -31,7 +31,7 @@ const LogExpense = ({ handleClose, _id, setExpenses }) => {
 
   const setExpenseData = async (id) => {
     // update view from model w/ controller
-    const expenseById = '';
+    const expenseById = await fetch(id);
     setExpense(expenseById[0]);
   };
 
@@ -46,7 +46,7 @@ const LogExpense = ({ handleClose, _id, setExpenses }) => {
       return setErr(res);
     }
     // update view from model w/ controller
-    const expenseList = '';
+    const expenseList = await fetchExpenses(date);
     setExpenses(expenseList);
     handleClose();
     return null;
@@ -61,12 +61,12 @@ const LogExpense = ({ handleClose, _id, setExpenses }) => {
     if (_id) {
       formSetter(data, expense);
       // send user action to controller
-      const res = '';
+      const res = await updateExpense(_id, data);
       expenseListRefresh(res, expense.created_at);
     } else {
       data.set('created_at', new Date().toISOString());
       // send user action to controller
-      const res = '';
+      const res = await createExpense(data);
       expenseListRefresh(res);
     }
   };
