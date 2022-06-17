@@ -6,7 +6,6 @@ require('dotenv').config();
 
 const PORT = process.env.PORT;
 
-app.use('/users', usersRouter);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}...`)
