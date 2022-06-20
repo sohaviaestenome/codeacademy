@@ -1,13 +1,19 @@
 const express = require('express');
-
 const app = express();
-const usersRouter = require('./routes/users.routes');
-require('dotenv').config();
 
-const PORT = process.env.PORT;
+const loaders = require('./loaders');
 
+const { PORT } = require('./config');
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}...`)
-})
+async function startServer() {
 
+  // Init application loaders
+  loaders(app);
+
+  // Start server
+  app.listen(PORT, () => {
+    console.log(`Server listening on PORT ${PORT}`);
+  })
+}
+
+startServer();
