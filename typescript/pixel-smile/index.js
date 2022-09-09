@@ -1,8 +1,8 @@
+"use strict";
 // create the image data
 const imageWidth = 20;
 const imageHeight = 8;
 const imageData = createImageData();
-
 // draw head
 drawRectangle(0, 0, 20, 8);
 // eyes
@@ -12,26 +12,18 @@ drawDot(12, 2);
 drawDot(4, 4);
 drawHorizontalLine(4, 5, 12);
 drawDot(15, 4);
-
 // output what we drew to the console
 outputImage();
-
-function drawRectangle(
-  x: number,
-  y: number,
-  width: number,
-  height: number
-) {
-  // top
-  drawHorizontalLine(x, y, width);
-  // bottom
-  drawHorizontalLine(x, y + height - 1, width);
-  // left
-  drawVerticalLine(x, y, height);
-  // right
-  drawVerticalLine(x + width - 1, y, height);
+function drawRectangle(x, y, width, height) {
+    // top
+    drawHorizontalLine(x, y, width);
+    // bottom
+    drawHorizontalLine(x, y + height - 1, width);
+    // left
+    drawVerticalLine(x, y, height);
+    // right
+    drawVerticalLine(x + width - 1, y, height);
 }
-
 /**
  * Gets if the provided point is in the image.
  * @param x - The horizontal position within
@@ -39,10 +31,9 @@ function drawRectangle(
  * @param y - The vertical position within
  * the image.
  */
-function isPointInImage(x: number, y: number){
-  return x >= 0 && x < imageWidth && y >= 0 && y < imageHeight;
+function isPointInImage(x, y) {
+    return x >= 0 && x < imageWidth && y >= 0 && y < imageHeight;
 }
-
 /**
  * Outputs the image data state to the console.
  * @param onChar - Character to render an
@@ -51,39 +42,31 @@ function isPointInImage(x: number, y: number){
  * "off" pixel with.
  */
 function outputImage(onChar = "X", offChar = " ") {
-  let text = "";
-
-  for (let i = 0; i < imageData.length; i++) {
-    if (i > 0 && i % imageWidth === 0) {
-      text += "\n"; // new line
+    let text = "";
+    for (let i = 0; i < imageData.length; i++) {
+        if (i > 0 && i % imageWidth === 0) {
+            text += "\n"; // new line
+        }
+        text += imageData[i] ? onChar : offChar;
     }
-
-    text += imageData[i] ? onChar : offChar;
-  }
-
-  console.log(text);
+    console.log(text);
 }
-
-function drawDot(x: number, y: number) {
-  imageData[y * imageWidth + x] = true;
-
-  if (isPointInImage(x, y)) {
-  imageData[y * imageWidth + x] = true;
-  }
+function drawDot(x, y) {
+    imageData[y * imageWidth + x] = true;
+    if (isPointInImage(x, y)) {
+        imageData[y * imageWidth + x] = true;
+    }
 }
-
-function drawHorizontalLine(x: number, y: number, length: number) {
-  for (let i = 0; i < length; i++) {
-  drawDot(x + i, y);
-  }
+function drawHorizontalLine(x, y, length) {
+    for (let i = 0; i < length; i++) {
+        drawDot(x + i, y);
+    }
 }
-
-function drawVerticalLine(x: number, y: number, length: number) {
-  for (let i = 0; i < length; i++) {
-  drawDot(x, y + i);
-  }
+function drawVerticalLine(x, y, length) {
+    for (let i = 0; i < length; i++) {
+        drawDot(x, y + i);
+    }
 }
-
 /**
  * Creates an array of booleans where a pixel
  * is "on" when the value is `true` and "off"
@@ -94,18 +77,18 @@ function drawVerticalLine(x: number, y: number, length: number) {
  * pixel in the array can be found via:
  *
  *     index = y * imageWidth + x
- *  
+ *
  * `x` is the horizontal position in the image
  * and `y` is the vertical position from the top
  * left corner.
- * 
+ *
  * Note: This function has a return type annotation
  * of `boolean[]`. That means it's an array of
  * booleans. We'll learn more about this in a
  * future module.
  */
-function createImageData(): boolean[] {
-  // create array of size `length` containing `false` values
-  const length = imageWidth * imageHeight;
-  return new Array(length).fill(false);
+function createImageData() {
+    // create array of size `length` containing `false` values
+    const length = imageWidth * imageHeight;
+    return new Array(length).fill(false);
 }
