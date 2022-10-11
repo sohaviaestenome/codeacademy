@@ -46,13 +46,12 @@ const wsServer = new WebSocket.Server({ server });
   // Exercise 8: Broadcast messages received to all other clients
 wsServer.on('connection', (socket) => {
   console.log("A new client has connected to the server.");
-
   socket.on('message', (data) => {
     console.log(data);
    // socket.send('Message received: ' + data);
     broadcast(data, socket);
   })
-} )
+});
 
 ///////////////////////////////////////////////
 ////////////// HELPER FUNCTIONS ///////////////
