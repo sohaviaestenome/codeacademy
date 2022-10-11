@@ -9,7 +9,7 @@ const path = require('path');
 const WebSocket = require('ws');
 
 // You may choose to use the constants defined in the file below
-const { PORT, CLIENT } = CONSTANTS;
+const { PORT, CLIENT, SERVER } = CONSTANTS;
 
 ///////////////////////////////////////////////
 ///////////// HTTP SERVER LOGIC ///////////////
@@ -52,15 +52,22 @@ wsServer.on('connection', (socket) => {
  
         
     const {type, payload} = JSON.parse(data);
+
     switch(type) {
       case CLIENT.MESSAGE.NEW_USER:
-        showMessageReceived(`<em>${payload.username} has joined<em>`);
+        const time = new Date().toLocaleString();
+        payload.time = time;
+        const dataWithTime = {
+          type: SERVER.BROADCAST.NEW_USER_WITH_TIME,
+          payload
+        }
+        broadcast(JSON.stringify(dataWithTime))
+
         break;
       case CLIENT.MESSAGE.NEW_MESSAGE:
-        showMessageReceived(`<strong>${payload.username}</strong>: ${payload.message}`);
+        broadcast(data, socket);
         break;
     }
-    broadcast(data, socket);
   })
 });
 

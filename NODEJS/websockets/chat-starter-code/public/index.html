@@ -90,12 +90,12 @@
       wsClient.onmessage = (messageEvent) => {
         
         const message = messageEvent.data;
-        
+
         const {type, payload} = JSON.parse(message);
 
         switch(type) {
-          case CLIENT.MESSAGE.NEW_USER:
-            showMessageReceived(`<em>${payload.username} has joined<em>`);
+          case  SERVER.BROADCAST.NEW_USER_WITH_TIME:
+            showMessageReceived(`<em>${payload.username} has joined at ${payload.time}<em>`);
             break;
           case CLIENT.MESSAGE.NEW_MESSAGE:
             showMessageReceived(`<strong>${payload.username}</strong>: ${payload.message}`);
