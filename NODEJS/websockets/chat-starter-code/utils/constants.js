@@ -6,6 +6,15 @@ const CLIENT = {
   }
 };
 
+const SERVER = {
+  BROADCAST: {
+
+  },
+  MESSAGE: {
+    
+  }
+}
+
 // This check allows the module to be used in the client and the server
 if (typeof module !== "undefined" && module.exports) {
   module.exports = exports = {

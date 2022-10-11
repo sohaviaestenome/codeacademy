@@ -8,10 +8,10 @@
   <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
   <!-- You may choose to use the message constants defined in the file below -->
   <script src="/utils/constants.js"></script>
-  <title>ChatCademy</title>
+  <title>PedroChat</title>
 </head>
 <body>
-  <h2>ChatCademy</h2>
+  <h2>PedroChat</h2>
   <div class="chat">
     <!-- Messages will appear here -->
   </div>
@@ -28,6 +28,7 @@
     // This variable will hold the WebSocket client connection. 
     // Initialize in the init() function
     let wsClient; 
+    const username = prompt("what is your username?");
     
     ////////////////////////////////////////////////
     //////////////// DOM SETUP /////////////////////
@@ -78,7 +79,8 @@
       wsClient.onopen = () => {
         console.log("connection to the server established");
         const data = {
-          type: "NEW_USER"
+          type: CLIENT.MESSAGE.NEW_USER,
+          payload: {username}
         }
         wsClient.send(JSON.stringify(data));
       }
@@ -88,16 +90,15 @@
       wsClient.onmessage = (messageEvent) => {
         
         const message = messageEvent.data;
-  
-
+        
         const {type, payload} = JSON.parse(message);
 
         switch(type) {
-          case "NEW_USER":
-            showMessageReceived("<em>New user has joined<em>");
+          case CLIENT.MESSAGE.NEW_USER:
+            showMessageReceived(`<em>${payload.username} has joined<em>`);
             break;
-          case "NEW_MESSAGE":
-            showMessageReceived(payload.message);
+          case CLIENT.MESSAGE.NEW_MESSAGE:
+            showMessageReceived(`<strong>${payload.username}</strong>: ${payload.message}`);
             break;
         }
 
@@ -140,8 +141,8 @@
       wsClient.send(message)
       // Exercise 9: Send the message in a custom message object with .type and .payload properties
       const data = {
-        type: "NEW_MESSAGE",
-        payload: {message: message}
+        type: CLIENT.MESSAGE.NEW_MESSAGE,
+        payload: {message, username}
       }
       wsClient.send(JSON.stringify(data));
     }

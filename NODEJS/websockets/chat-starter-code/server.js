@@ -49,6 +49,17 @@ wsServer.on('connection', (socket) => {
   socket.on('message', (data) => {
     console.log(data);
    // socket.send('Message received: ' + data);
+ 
+        
+    const {type, payload} = JSON.parse(data);
+    switch(type) {
+      case CLIENT.MESSAGE.NEW_USER:
+        showMessageReceived(`<em>${payload.username} has joined<em>`);
+        break;
+      case CLIENT.MESSAGE.NEW_MESSAGE:
+        showMessageReceived(`<strong>${payload.username}</strong>: ${payload.message}`);
+        break;
+    }
     broadcast(data, socket);
   })
 });
