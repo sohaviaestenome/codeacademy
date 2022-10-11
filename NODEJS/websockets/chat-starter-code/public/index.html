@@ -69,17 +69,26 @@
 
       // TODO: 
       // Exercise 4: Create a new WebSocket connection with the server using the ws protocol.
-      const URL = '??://localhost:' + PORT;
+      const URL = 'ws://localhost:' + PORT;
+      wsClient = new WebSocket(URL);
 
 
       // TODO:
       // Exercise 5: Respond to connections by defining the .onopen event handler.
-
+      wsClient.onopen = () => {
+        console.log("connection to the server established");
+      }
 
       // TODO:
       // Exercise 7: Respond to messages from the servery by defining the .onmessage event handler
-      // Exercise 9: Parse custom message types, formatting each message based on the type.
+      wsClient.onmessage = (messageEvent) => {
+        
+        const message = messageEvent.data;
+        showMessageReceived(message);
 
+      }
+      // Exercise 9: Parse custom message types, formatting each message based on the type.
+      
 
 
       /* Note:
@@ -98,6 +107,9 @@
         console.error("WebSocket error observed:", event);
         wsClient = null;
       }
+
+
+
     }
 
     function sendMessageToServer(message) {
@@ -109,6 +121,7 @@
       
       // TODO: 
       // Exercise 6: Send the message from the messageBox to the server
+      wsClient.send(message)
       // Exercise 9: Send the message in a custom message object with .type and .payload properties
     }
 
