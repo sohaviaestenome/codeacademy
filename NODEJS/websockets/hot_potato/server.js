@@ -38,10 +38,12 @@ const server = http.createServer((req, res) => {
 ////////////////// WS LOGIC ///////////////////
 ///////////////////////////////////////////////
 
-// TODO: Create the WebSocket Server (ws) using the HTTP server
-
+const wsServer = new WebSocket.Server();
 
 // TODO: Define the websocket server 'connection' handler
+wsServer.on('connection', (socket)=> {
+  console.log('A new client has joined the server');
+})
 // TODO: Define the socket 'message' handler
   // 'NEW_USER' => handleNewUser(socket)
   // 'PASS_POTATO' => passThePotatoTo(newPotatoHolderIndex)
