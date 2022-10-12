@@ -67,7 +67,9 @@
 
       // TODO: Define the .onopen() handler
         // TODO: Send the server a 'NEW_USER' message
-
+      wsClient.onopen = (event) => {
+        console.log("Connected to WebSocket server!");
+      }
       // TODO: Define the .onmessage() handler
         // For each message type below, call the appropriate helper the proper value
           // 'GAME_FULL' => updateDisplay(displayText);
