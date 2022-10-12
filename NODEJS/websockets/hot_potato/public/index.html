@@ -69,6 +69,12 @@
         // TODO: Send the server a 'NEW_USER' message
       wsClient.onopen = (event) => {
         console.log("Connected to WebSocket server!");
+
+        const customMessage = {
+          type: CLIENT.MESSAGE.NEW_USER
+        }
+
+        wsClient.send(JSON.stringify(customMessage));
       }
       // TODO: Define the .onmessage() handler
         // For each message type below, call the appropriate helper the proper value

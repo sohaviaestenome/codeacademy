@@ -43,6 +43,9 @@ const wsServer = new WebSocket.Server({server});
 // TODO: Define the websocket server 'connection' handler
 wsServer.on('connection', (socket) => {
   console.log('A new client has joined the server');
+  socket.on('message', (data)=>{
+    console.log(data);
+  })
 });
 // TODO: Define the socket 'message' handler
   // 'NEW_USER' => handleNewUser(socket)
