@@ -62,6 +62,7 @@
 
       // TODO: Create a new WebSocket connection with the server using the ws protocol
       const URL = 'ws://localhost:' + PORT;
+      wsClient = new WebSocket(URL);
 
 
       // TODO: Define the .onopen() handler
