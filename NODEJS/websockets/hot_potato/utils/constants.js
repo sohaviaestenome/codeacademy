@@ -18,7 +18,7 @@ const SERVER = {
   }
 };
 
-const wsServer = new WebSocket.Server();
+
 
 // This check allows the module to be used in the client and the server
 if (typeof module !== "undefined" && module.exports) {
