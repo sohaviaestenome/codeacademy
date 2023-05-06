@@ -1,13 +1,13 @@
 //
-//  code_HistoryUITests.swift
-//  code HistoryUITests
+//  CodeHistoryUITests.swift
+//  CodeHistoryUITests
 //
-//  Created by Pedro Silva on 05/05/2023.
+//  Created by Pedro Silva on 06/05/2023.
 //
 
 import XCTest
 
-final class code_HistoryUITests: XCTestCase {
+final class CodeHistoryUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

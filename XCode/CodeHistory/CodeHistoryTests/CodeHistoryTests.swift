@@ -1,13 +1,14 @@
 //
-//  code_HistoryTests.swift
-//  code HistoryTests
+//  CodeHistoryTests.swift
+//  CodeHistoryTests
 //
-//  Created by Pedro Silva on 05/05/2023.
+//  Created by Pedro Silva on 06/05/2023.
 //
 
 import XCTest
+@testable import CodeHistory
 
-final class code_HistoryTests: XCTestCase {
+final class CodeHistoryTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,7 +28,7 @@ final class code_HistoryTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

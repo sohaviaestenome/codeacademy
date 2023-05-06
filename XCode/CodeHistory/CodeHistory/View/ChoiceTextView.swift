@@ -1,8 +1,8 @@
 //
-//  ContentView.swift
-//  code History
+//  ChoiceTextView.swift
+//  CodeHistory
 //
-//  Created by Pedro Silva on 05/05/2023.
+//  Created by Pedro Silva on 06/05/2023.
 //
 
 import SwiftUI

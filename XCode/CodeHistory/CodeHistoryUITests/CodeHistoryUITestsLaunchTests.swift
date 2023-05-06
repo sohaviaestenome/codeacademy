@@ -1,13 +1,13 @@
 //
-//  code_HistoryUITestsLaunchTests.swift
-//  code HistoryUITests
+//  CodeHistoryUITestsLaunchTests.swift
+//  CodeHistoryUITests
 //
-//  Created by Pedro Silva on 05/05/2023.
+//  Created by Pedro Silva on 06/05/2023.
 //
 
 import XCTest
 
-final class code_HistoryUITestsLaunchTests: XCTestCase {
+final class CodeHistoryUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,14 +1,14 @@
 //
-//  code_HistoryApp.swift
-//  code History
+//  CodeHistoryApp.swift
+//  CodeHistory
 //
-//  Created by Pedro Silva on 05/05/2023.
+//  Created by Pedro Silva on 06/05/2023.
 //
 
 import SwiftUI
 
 @main
-struct code_HistoryApp: App {
+struct CodeHistoryApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
