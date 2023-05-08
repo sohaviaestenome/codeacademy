@@ -18,6 +18,7 @@
 		0EA0C81C2A05D336008A388F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0C81B2A05D336008A388F /* Question.swift */; };
 		0EA0C81E2A05D36B008A388F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0C81D2A05D36B008A388F /* Game.swift */; };
 		0EC16A492A09565A00F959A9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC16A482A09565A00F959A9 /* WelcomeView.swift */; };
+		0EC16A4B2A09593500F959A9 /* BottomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC16A4A2A09593500F959A9 /* BottomTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		0EA0C81B2A05D336008A388F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		0EA0C81D2A05D36B008A388F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0EC16A482A09565A00F959A9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		0EC16A4A2A09593500F959A9 /* BottomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				0EA0C7F12A05D2CE008A388F /* GameView.swift */,
 				0EA0C8192A05D2F2008A388F /* ChoiceTextView.swift */,
 				0EC16A482A09565A00F959A9 /* WelcomeView.swift */,
+				0EC16A4A2A09593500F959A9 /* BottomTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC16A4B2A09593500F959A9 /* BottomTextView.swift in Sources */,
 				0EA0C7F22A05D2CE008A388F /* GameView.swift in Sources */,
 				0EC16A492A09565A00F959A9 /* WelcomeView.swift in Sources */,
 				0EA0C81E2A05D36B008A388F /* Game.swift in Sources */,
