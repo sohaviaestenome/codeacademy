@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BottomTextView: View {
-    
     let str: String
+    
     var body: some View {
         HStack {
             Spacer()
@@ -18,7 +18,7 @@ struct BottomTextView: View {
                 .bold()
                 .padding()
             Spacer()
-        }.background(Color(red: 48/255, green: 105/255, blue: 240/255))
+        }.background(GameColor.accent)
     }
 }
 
