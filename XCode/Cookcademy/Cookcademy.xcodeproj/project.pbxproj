@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0EFDB8D12A0BB0A30029CEB5 /* CookcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8D02A0BB0A30029CEB5 /* CookcademyApp.swift */; };
-		0EFDB8D32A0BB0A30029CEB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8D22A0BB0A30029CEB5 /* ContentView.swift */; };
+		0EFDB8D32A0BB0A30029CEB5 /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8D22A0BB0A30029CEB5 /* RecipesListView.swift */; };
 		0EFDB8D52A0BB0A40029CEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFDB8D42A0BB0A40029CEB5 /* Assets.xcassets */; };
 		0EFDB8D82A0BB0A40029CEB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFDB8D72A0BB0A40029CEB5 /* Preview Assets.xcassets */; };
 		0EFDB8E02A0BB13F0029CEB5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8DF2A0BB13F0029CEB5 /* Recipe.swift */; };
+		0EFDB8FE2A0BE5A10029CEB5 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8FD2A0BE5A10029CEB5 /* RecipeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EFDB8CD2A0BB0A30029CEB5 /* Cookcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFDB8D02A0BB0A30029CEB5 /* CookcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookcademyApp.swift; sourceTree = "<group>"; };
-		0EFDB8D22A0BB0A30029CEB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0EFDB8D22A0BB0A30029CEB5 /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
 		0EFDB8D42A0BB0A40029CEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EFDB8D72A0BB0A40029CEB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EFDB8DF2A0BB13F0029CEB5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		0EFDB8FD2A0BE5A10029CEB5 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +55,10 @@
 		0EFDB8CF2A0BB0A30029CEB5 /* Cookcademy */ = {
 			isa = PBXGroup;
 			children = (
+				0EFDB8FC2A0BE4510029CEB5 /* Views */,
+				0EFDB8FB2A0BE4360029CEB5 /* ViewModels */,
 				0EFDB8DE2A0BB0BB0029CEB5 /* Models */,
 				0EFDB8D02A0BB0A30029CEB5 /* CookcademyApp.swift */,
-				0EFDB8DF2A0BB13F0029CEB5 /* Recipe.swift */,
-				0EFDB8D22A0BB0A30029CEB5 /* ContentView.swift */,
 				0EFDB8D42A0BB0A40029CEB5 /* Assets.xcassets */,
 				0EFDB8D62A0BB0A40029CEB5 /* Preview Content */,
 			);
@@ -74,8 +76,25 @@
 		0EFDB8DE2A0BB0BB0029CEB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0EFDB8DF2A0BB13F0029CEB5 /* Recipe.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0EFDB8FB2A0BE4360029CEB5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0EFDB8FD2A0BE5A10029CEB5 /* RecipeData.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0EFDB8FC2A0BE4510029CEB5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EFDB8D22A0BB0A30029CEB5 /* RecipesListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EFDB8E02A0BB13F0029CEB5 /* Recipe.swift in Sources */,
-				0EFDB8D32A0BB0A30029CEB5 /* ContentView.swift in Sources */,
+				0EFDB8FE2A0BE5A10029CEB5 /* RecipeData.swift in Sources */,
+				0EFDB8D32A0BB0A30029CEB5 /* RecipesListView.swift in Sources */,
 				0EFDB8D12A0BB0A30029CEB5 /* CookcademyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
