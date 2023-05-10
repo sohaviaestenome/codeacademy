@@ -14,6 +14,7 @@
 		0EFDB8E02A0BB13F0029CEB5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8DF2A0BB13F0029CEB5 /* Recipe.swift */; };
 		0EFDB8FE2A0BE5A10029CEB5 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8FD2A0BE5A10029CEB5 /* RecipeData.swift */; };
 		0EFDB9002A0BE7CD0029CEB5 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8FF2A0BE7CD0029CEB5 /* RecipeDetailView.swift */; };
+		0EFDB9022A0BEA5F0029CEB5 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB9012A0BEA5F0029CEB5 /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0EFDB8DF2A0BB13F0029CEB5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0EFDB8FD2A0BE5A10029CEB5 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		0EFDB8FF2A0BE7CD0029CEB5 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		0EFDB9012A0BEA5F0029CEB5 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0EFDB8FD2A0BE5A10029CEB5 /* RecipeData.swift */,
+				0EFDB9012A0BEA5F0029CEB5 /* AppColor.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				0EFDB8FE2A0BE5A10029CEB5 /* RecipeData.swift in Sources */,
 				0EFDB8D32A0BB0A30029CEB5 /* RecipesListView.swift in Sources */,
 				0EFDB8D12A0BB0A30029CEB5 /* CookcademyApp.swift in Sources */,
+				0EFDB9022A0BEA5F0029CEB5 /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

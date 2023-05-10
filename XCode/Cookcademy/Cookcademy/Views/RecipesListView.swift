@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
-
+ 
 struct RecipesListView: View {
   @StateObject var recipeData = RecipeData()
-     
-    var body: some View {
-        List {
-          ForEach(recipes) { recipe in
-            Text(recipe.mainInformation.name)
-          }
-        }
-        .navigationTitle(navigationTitle)
+ 
+  private let listBackgroundColor = AppColor.background
+  private let listTextColor = AppColor.foreground
+ 
+  var body: some View {
+    List {
+      ForEach(recipes) { recipe in
+        NavigationLink(recipe.mainInformation.name,
+                       destination: RecipeDetailView(recipe: recipe))
       }
+      .listRowBackground(listBackgroundColor)
+      .foregroundColor(listTextColor)
     }
-
+    .navigationTitle(navigationTitle)
+  }
+}
+ 
 extension RecipesListView {
   var recipes: [Recipe] {
     recipeData.recipes
@@ -29,11 +35,11 @@ extension RecipesListView {
     "All Recipes"
   }
 }
-     
-    struct RecipesListView_Previews: PreviewProvider {
-      static var previews: some View {
-        NavigationView {
-          RecipesListView()
-        }
-      }
+ 
+struct RecipesListView_Previews: PreviewProvider {
+  static var previews: some View {
+    NavigationView {
+      RecipesListView()
     }
+  }
+}
