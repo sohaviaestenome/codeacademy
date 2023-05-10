@@ -8,23 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
+ 
     var body: some View {
-           List(animals, id: \.uniqueID) { animal in
-               Text(animal.name)
-           }
-       }
+        List {
+            ForEach(animalGroups) { animalGroup in
+                Section(header: Text(animalGroup.groupName)) {
+                    ForEach(animalGroup.animals) { animal in
+                        Text(animal.name)
+                    }
+                }
+            }
+        }
+    }
+ 
 }
 
-struct Animal {
-    var uniqueID : Int
-    var name: String
+struct Animal: Identifiable {
+    var id = UUID()
+    var name : String
 }
 
-let animals = [
-    Animal(uniqueID: 0, name: "Dog"),
-    Animal(uniqueID: 1, name: "Cat"),
-    Animal(uniqueID: 2, name: "Parrot")
+struct AnimalGroup: Identifiable {
+    var id = UUID()
+    var groupName : String
+    var animals : [Animal]
+}
+
+let animalGroups = [
+    AnimalGroup(groupName: "Pets", animals: [
+        Animal(name: "Dog"),
+        Animal(name: "Cat"),
+        Animal(name: "Parrot"),
+        Animal(name: "Mouse")
+    ]),
+    AnimalGroup(groupName: "Farm", animals: [
+        Animal(name: "Cow"),
+        Animal(name: "Horse"),
+        Animal(name: "Goat"),
+        Animal(name: "Sheep"),
+    ]),
+    AnimalGroup(groupName: "Critters", animals: [
+        Animal(name: "Firefly"),
+        Animal(name: "Spider"),
+        Animal(name: "Ant"),
+        Animal(name: "Squirrel"),
+    ])
 ]
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
