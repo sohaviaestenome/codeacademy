@@ -49,6 +49,17 @@ class RecipeData: ObservableObject {
         }
       }
     
+    func loadRecipes() {
+       guard let data = try? Data(contentsOf: recipesFileURL) else { return }
+       do {
+         let savedRecipes = try JSONDecoder().decode([Recipe].self, from: data)
+         recipes = savedRecipes
+       }
+       catch {
+         fatalError("An error occurred while loading recipes: \(error)")
+       }
+     }
+    
     private var recipesFileURL: URL {
         do {
           let documentsDirectory = try FileManager.default.url(for: .documentDirectory,
