@@ -12,7 +12,8 @@ struct ModifyMainInformationView: View {
     let rowForegroundColor = AppColor.foreground
 
     @Binding var mainInformation: MainInformation
-
+    @EnvironmentObject private var recipeData: RecipeData
+    
     var body: some View {
         Form {
             TextField("Recipe Name", text: $mainInformation.name)
@@ -51,6 +52,5 @@ struct ModifyMainInformationView_Previews: PreviewProvider {
         ModifyMainInformationView(mainInformation: $emptyInformation)
     }
 }
-
 
 

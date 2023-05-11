@@ -20,7 +20,7 @@ struct ModifyDirectionView: ModifyComponentView {
     private let listTextColor = AppColor.foreground
 
     @Environment(\.presentationMode) private var mode
-    
+
     var body: some View {
         Form {
             TextField("Direction Description", text: $direction.description)

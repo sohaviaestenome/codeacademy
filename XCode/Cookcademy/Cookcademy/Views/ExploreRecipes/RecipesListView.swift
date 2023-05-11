@@ -10,7 +10,7 @@ import SwiftUI
 struct RecipesListView: View {
     @EnvironmentObject private var recipeData: RecipeData
     let category: MainInformation.Category
-    
+
     @State private var isPresenting = false
     @State private var newRecipe = Recipe()
 
@@ -20,7 +20,7 @@ struct RecipesListView: View {
     var body: some View {
         List {
             ForEach(recipes) { recipe in
-                NavigationLink(recipe.mainInformation.name, destination: RecipeDetailView(recipe: recipe))
+                NavigationLink(recipe.mainInformation.name, destination: RecipeDetailView(recipe: binding(for: recipe)))
             }
             .listRowBackground(listBackgroundColor)
             .foregroundColor(listTextColor)
@@ -61,7 +61,6 @@ struct RecipesListView: View {
     }
 }
 
-
 extension RecipesListView {
     private var recipes: [Recipe] {
         recipeData.recipes(for: category)
@@ -69,6 +68,13 @@ extension RecipesListView {
     
     private var navigationTitle: String {
         "\(category.rawValue) Recipes"
+    }
+    
+    func binding(for recipe: Recipe) -> Binding<Recipe> {
+        guard let index = recipeData.index(of: recipe) else {
+            fatalError("Recipe not found")
+        }
+        return $recipeData.recipes[index]
     }
 }
 

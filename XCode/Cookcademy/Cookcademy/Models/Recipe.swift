@@ -14,6 +14,8 @@ struct Recipe: Identifiable {
     var ingredients: [Ingredient]
     var directions: [Direction]
     
+    
+    
     init() {
         self.init(mainInformation: MainInformation(name: "", description: "", author: "", category: .breakfast),
                   ingredients: [],
@@ -47,6 +49,8 @@ struct MainInformation {
     var isValid: Bool {
         !name.isEmpty && !description.isEmpty && !author.isEmpty
     }
+    
+    
 }
 
 struct Direction: RecipeComponent {
