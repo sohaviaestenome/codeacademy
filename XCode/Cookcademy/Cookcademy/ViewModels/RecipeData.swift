@@ -26,9 +26,10 @@ class RecipeData: ObservableObject {
     
     func add(recipe: Recipe) {
         if recipe.isValid {
-            recipes.append(recipe)
+          recipes.append(recipe)
+          saveRecipes()
         }
-    }
+      }
     
     func index(of recipe: Recipe) -> Int? {
         for i in recipes.indices {
