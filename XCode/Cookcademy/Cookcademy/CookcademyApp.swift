@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct CookcademyApp: App {
-  var body: some Scene {
-    WindowGroup {
-      RecipeCategoryGridView()
+    var body: some Scene {
+        WindowGroup {
+            MainTabView()
+        }
     }
-  }
 }
