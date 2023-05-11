@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct Recipe: Identifiable {
+struct Recipe:Identifiable {
     var id = UUID()
     var mainInformation: MainInformation
     var ingredients: [Ingredient]
     var directions: [Direction]
     
-    
-    
+    var isValid: Bool {
+        mainInformation.isValid && !ingredients.isEmpty && !directions.isEmpty
+    }
+
     init() {
         self.init(mainInformation: MainInformation(name: "", description: "", author: "", category: .breakfast),
                   ingredients: [],
@@ -26,11 +28,7 @@ struct Recipe: Identifiable {
         self.ingredients = ingredients
         self.directions = directions
     }
-    
-    var isValid: Bool {
-       mainInformation.isValid && !ingredients.isEmpty && !directions.isEmpty
-     }
-   }
+}
 
 struct MainInformation {
     var name: String
@@ -44,9 +42,10 @@ struct MainInformation {
         case dinner = "Dinner"
         case dessert = "Dessert"
     }
+
     var isValid: Bool {
         !name.isEmpty && !description.isEmpty && !author.isEmpty
-      }
+    }
 }
 
 struct Direction {
@@ -72,6 +71,16 @@ struct Ingredient {
                 return "\(formattedQuantity) \(unit.rawValue) \(name) "
             }
         }
+    }
+    
+    init(name: String, quantity: Double, unit: Unit) {
+        self.name = name
+        self.quantity = quantity
+        self.unit = unit
+    }
+    
+    init() {
+        self.init(name: "", quantity: 1.0, unit: .none)
     }
     
     enum Unit: String, CaseIterable {
