@@ -14,6 +14,7 @@
 		0EEE445A2A0E5C730040E38B /* UserFecthingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE44592A0E5C730040E38B /* UserFecthingClient.swift */; };
 		0EEE445C2A0E5DF60040E38B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE445B2A0E5DF60040E38B /* UserData.swift */; };
 		0EEE445E2A0E5EA30040E38B /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE445D2A0E5EA30040E38B /* UsersView.swift */; };
+		0EEE44602A0E636F0040E38B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE445F2A0E636F0040E38B /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0EEE44592A0E5C730040E38B /* UserFecthingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFecthingClient.swift; sourceTree = "<group>"; };
 		0EEE445B2A0E5DF60040E38B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0EEE445D2A0E5EA30040E38B /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		0EEE445F2A0E636F0040E38B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0EEE445D2A0E5EA30040E38B /* UsersView.swift */,
 				0EEE445B2A0E5DF60040E38B /* UserData.swift */,
 				0EEE44592A0E5C730040E38B /* UserFecthingClient.swift */,
+				0EEE445F2A0E636F0040E38B /* User.swift */,
 				0EEE444F2A0E5BDD0040E38B /* Assets.xcassets */,
 				0EEE44512A0E5BDD0040E38B /* Preview Content */,
 			);
@@ -148,6 +151,7 @@
 			files = (
 				0EEE445E2A0E5EA30040E38B /* UsersView.swift in Sources */,
 				0EEE444E2A0E5BDC0040E38B /* ContentView.swift in Sources */,
+				0EEE44602A0E636F0040E38B /* User.swift in Sources */,
 				0EEE445A2A0E5C730040E38B /* UserFecthingClient.swift in Sources */,
 				0EEE445C2A0E5DF60040E38B /* UserData.swift in Sources */,
 				0EEE444C2A0E5BDC0040E38B /* RandomUsersApp.swift in Sources */,
