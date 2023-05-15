@@ -27,6 +27,7 @@
 		0EB0C64B2A1199C0005BB769 /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0C64A2A1199C0005BB769 /* PostsList.swift */; };
 		0EB0C64C2A119B55005BB769 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0C6432A1193C5005BB769 /* GoogleService-Info.plist */; };
 		0EB0C64E2A119BBE005BB769 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0C64D2A119BBE005BB769 /* PostRow.swift */; };
+		0EF705602A12F58300A7DEEF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7055F2A12F58300A7DEEF /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		0EB0C6462A1194B9005BB769 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0EB0C64A2A1199C0005BB769 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostsList.swift; path = Socialcademy/PostsList.swift; sourceTree = SOURCE_ROOT; };
 		0EB0C64D2A119BBE005BB769 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostRow.swift; path = Socialcademy/PostRow.swift; sourceTree = SOURCE_ROOT; };
+		0EF7055F2A12F58300A7DEEF /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = Socialcademy/ViewModels/MainTabView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				0EB0C64A2A1199C0005BB769 /* PostsList.swift */,
 				0EB0C64D2A119BBE005BB769 /* PostRow.swift */,
 				0E1CD7C12A124AFD00DE79BE /* NewPostForm.swift */,
+				0EF7055F2A12F58300A7DEEF /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				0EB0C64B2A1199C0005BB769 /* PostsList.swift in Sources */,
 				0E1CD7C22A124AFD00DE79BE /* NewPostForm.swift in Sources */,
 				0E8782D42A1282BF00B2D53D /* EmptyListView.swift in Sources */,
+				0EF705602A12F58300A7DEEF /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
