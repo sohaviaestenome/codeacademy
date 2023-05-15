@@ -20,6 +20,7 @@
 		0E20C5142A0EF627004BFEFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0E20C5132A0EF627004BFEFC /* FirebaseFirestore */; };
 		0E20C5162A0EF627004BFEFC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E20C5152A0EF627004BFEFC /* FirebaseFirestoreSwift */; };
 		0E8782D22A127FE900B2D53D /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8782D12A127FE900B2D53D /* Loadable.swift */; };
+		0E8782D42A1282BF00B2D53D /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8782D32A1282BF00B2D53D /* EmptyListView.swift */; };
 		0EB0C6472A1194B9005BB769 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0C6462A1194B9005BB769 /* Post.swift */; };
 		0EB0C64B2A1199C0005BB769 /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0C64A2A1199C0005BB769 /* PostsList.swift */; };
 		0EB0C64C2A119B55005BB769 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0C6432A1193C5005BB769 /* GoogleService-Info.plist */; };
@@ -57,6 +58,7 @@
 		0E20C5012A0EF52E004BFEFC /* SocialcademyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialcademyUITests.swift; sourceTree = "<group>"; };
 		0E20C5032A0EF52E004BFEFC /* SocialcademyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialcademyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0E8782D12A127FE900B2D53D /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		0E8782D32A1282BF00B2D53D /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyListView.swift; path = Socialcademy/Utilities/EmptyListView.swift; sourceTree = SOURCE_ROOT; };
 		0EB0C6432A1193C5005BB769 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EB0C6462A1194B9005BB769 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0EB0C64A2A1199C0005BB769 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostsList.swift; path = Socialcademy/PostsList.swift; sourceTree = SOURCE_ROOT; };
@@ -190,6 +192,7 @@
 				0EB0C64A2A1199C0005BB769 /* PostsList.swift */,
 				0EB0C64D2A119BBE005BB769 /* PostRow.swift */,
 				0E1CD7C12A124AFD00DE79BE /* NewPostForm.swift */,
+				0E8782D32A1282BF00B2D53D /* EmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				0E8782D22A127FE900B2D53D /* Loadable.swift in Sources */,
 				0EB0C64B2A1199C0005BB769 /* PostsList.swift in Sources */,
 				0E1CD7C22A124AFD00DE79BE /* NewPostForm.swift in Sources */,
+				0E8782D42A1282BF00B2D53D /* EmptyListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
