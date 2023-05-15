@@ -9,4 +9,4 @@ Pods/
 *.xcworkspace
 
 # Firebase configuration
-/Socialcademy/GoogleService-Info.plist
+/Socialcademy/Resources/GoogleService-Info.plist
