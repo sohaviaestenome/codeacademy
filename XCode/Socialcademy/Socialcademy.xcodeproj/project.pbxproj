@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E16F9AC2A12AB07008FF033 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16F9AB2A12AB07008FF033 /* PostRowViewModel.swift */; };
 		0E1CD7C22A124AFD00DE79BE /* NewPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CD7C12A124AFD00DE79BE /* NewPostForm.swift */; };
 		0E1CD7C52A125A8000DE79BE /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CD7C42A125A8000DE79BE /* PostViewModel.swift */; };
 		0E1CD7C82A125F4D00DE79BE /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CD7C72A125F4D00DE79BE /* PostRepository.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E16F9AB2A12AB07008FF033 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
 		0E1CD7C12A124AFD00DE79BE /* NewPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewPostForm.swift; path = Socialcademy/NewPostForm.swift; sourceTree = SOURCE_ROOT; };
 		0E1CD7C42A125A8000DE79BE /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		0E1CD7C72A125F4D00DE79BE /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1CD7C42A125A8000DE79BE /* PostViewModel.swift */,
+				0E16F9AB2A12AB07008FF033 /* PostRowViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E16F9AC2A12AB07008FF033 /* PostRowViewModel.swift in Sources */,
 				0E1CD7C52A125A8000DE79BE /* PostViewModel.swift in Sources */,
 				0EB0C6472A1194B9005BB769 /* Post.swift in Sources */,
 				0E20C4E72A0EF52D004BFEFC /* SocialcademyApp.swift in Sources */,
