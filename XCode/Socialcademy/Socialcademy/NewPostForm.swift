@@ -9,7 +9,10 @@ import SwiftUI
 
 struct NewPostForm: View {
     @State private var post = Post(title: "", content: "", authorName: "")
- 
+    typealias CreateAction = (Post) -> Void
+     
+    let createAction: CreateAction
+    
     var body: some View {
         NavigationView {
             Form {
@@ -36,12 +39,13 @@ struct NewPostForm: View {
     }
  
     private func createPost() {
+        createAction(post)
         print("[NewPostForm] Creating new post...")
     }
 }
 
 struct NewPostForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostForm()
+        NewPostForm(createAction: { _ in })
     }
 }
