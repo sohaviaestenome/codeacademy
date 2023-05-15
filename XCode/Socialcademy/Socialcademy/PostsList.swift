@@ -72,8 +72,23 @@ extension Loadable: Equatable where Value: Equatable {
     }
 }
 
+#if DEBUG
 struct PostsList_Previews: PreviewProvider {
+    @MainActor
+    private struct ListPreview: View {
+        let state: Loadable<[Post]>
+     
+        var body: some View {
+            let postsRepository = PostsRepositoryStub(state: state)
+            let viewModel = PostsViewModel(postsRepository: postsRepository)
+            PostsList(viewModel: viewModel)
+        }
+    }
     static var previews: some View {
-        PostsList()
+        ListPreview(state: .loaded([Post.testPost]))
+        ListPreview(state: .empty)
+        ListPreview(state: .error)
+        ListPreview(state: .loading)
     }
 }
+#endif
