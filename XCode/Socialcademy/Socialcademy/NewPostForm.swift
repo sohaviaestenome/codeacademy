@@ -9,10 +9,26 @@ import SwiftUI
 
 struct NewPostForm: View {
     @State private var post = Post(title: "", content: "", authorName: "")
-    typealias CreateAction = (Post) -> Void
+    typealias CreateAction = (Post) async throws -> Void
     @Environment(\.dismiss) private var dismiss
-     
+    
     let createAction: CreateAction
+    
+    enum FormState {
+        case idle, working, error
+     
+        var isError: Bool {
+            get {
+                self == .error
+            }
+            set {
+                guard !newValue else { return }
+                self = .idle
+            }
+        }
+    }
+    
+    @State private var state = FormState.idle
     
     var body: some View {
         NavigationView {
@@ -26,7 +42,11 @@ struct NewPostForm: View {
                         .multilineTextAlignment(.leading)
                 }
                 Button(action: createPost) {
-                    Text("Create Post")
+                    if state == .working {
+                        ProgressView()
+                    } else {
+                        Text("Create Post")
+                    }
                 }
                 .font(.headline)
                 .frame(maxWidth: .infinity)
@@ -37,12 +57,25 @@ struct NewPostForm: View {
             .onSubmit(createPost)
             .navigationTitle("New Post")
         }
+        .disabled(state == .working)
+        .alert("Cannot Create Post", isPresented: $state.isError, actions: {}) {
+            Text("Sorry, something went wrong.")
+        }
     }
- 
+    
     private func createPost() {
-        createAction(post)
-        dismiss()
+        Task {
+            state = .working
+            do {
+                try await createAction(post)
+                dismiss()
+            } catch {
+                print("[NewPostForm] Cannot create post: \(error)")
+                state = .error
+            }
+        }
     }
+    
 }
 
 struct NewPostForm_Previews: PreviewProvider {
