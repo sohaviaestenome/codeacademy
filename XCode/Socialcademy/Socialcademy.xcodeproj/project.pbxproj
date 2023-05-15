@@ -21,6 +21,7 @@
 		0E20C5162A0EF627004BFEFC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E20C5152A0EF627004BFEFC /* FirebaseFirestoreSwift */; };
 		0E8782D22A127FE900B2D53D /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8782D12A127FE900B2D53D /* Loadable.swift */; };
 		0E8782D42A1282BF00B2D53D /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8782D32A1282BF00B2D53D /* EmptyListView.swift */; };
+		0E8782D72A12928900B2D53D /* ErrorAlertViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8782D62A12928900B2D53D /* ErrorAlertViewModifier.swift */; };
 		0EB0C6472A1194B9005BB769 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0C6462A1194B9005BB769 /* Post.swift */; };
 		0EB0C64B2A1199C0005BB769 /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0C64A2A1199C0005BB769 /* PostsList.swift */; };
 		0EB0C64C2A119B55005BB769 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0C6432A1193C5005BB769 /* GoogleService-Info.plist */; };
@@ -58,7 +59,8 @@
 		0E20C5012A0EF52E004BFEFC /* SocialcademyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialcademyUITests.swift; sourceTree = "<group>"; };
 		0E20C5032A0EF52E004BFEFC /* SocialcademyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialcademyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0E8782D12A127FE900B2D53D /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
-		0E8782D32A1282BF00B2D53D /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyListView.swift; path = Socialcademy/Utilities/EmptyListView.swift; sourceTree = SOURCE_ROOT; };
+		0E8782D32A1282BF00B2D53D /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyListView.swift; path = Socialcademy/SupportingViews/EmptyListView.swift; sourceTree = SOURCE_ROOT; };
+		0E8782D62A12928900B2D53D /* ErrorAlertViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModifier.swift; sourceTree = "<group>"; };
 		0EB0C6432A1193C5005BB769 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EB0C6462A1194B9005BB769 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0EB0C64A2A1199C0005BB769 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostsList.swift; path = Socialcademy/PostsList.swift; sourceTree = SOURCE_ROOT; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0E20C4E62A0EF52D004BFEFC /* SocialcademyApp.swift */,
+				0E8782D52A12926700B2D53D /* SupportingViews */,
 				0EB0C6442A1193D8005BB769 /* Views */,
 				0E1CD7C32A125A6800DE79BE /* ViewModels */,
 				0EB0C6452A1194A5005BB769 /* Models */,
@@ -176,6 +179,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		0E8782D52A12926700B2D53D /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				0E8782D32A1282BF00B2D53D /* EmptyListView.swift */,
+				0E8782D62A12928900B2D53D /* ErrorAlertViewModifier.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
 		0EB0C6422A1193B1005BB769 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +204,6 @@
 				0EB0C64A2A1199C0005BB769 /* PostsList.swift */,
 				0EB0C64D2A119BBE005BB769 /* PostRow.swift */,
 				0E1CD7C12A124AFD00DE79BE /* NewPostForm.swift */,
-				0E8782D32A1282BF00B2D53D /* EmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +360,7 @@
 				0E20C4E72A0EF52D004BFEFC /* SocialcademyApp.swift in Sources */,
 				0E1CD7C82A125F4D00DE79BE /* PostRepository.swift in Sources */,
 				0EB0C64E2A119BBE005BB769 /* PostRow.swift in Sources */,
+				0E8782D72A12928900B2D53D /* ErrorAlertViewModifier.swift in Sources */,
 				0E8782D22A127FE900B2D53D /* Loadable.swift in Sources */,
 				0EB0C64B2A1199C0005BB769 /* PostsList.swift in Sources */,
 				0E1CD7C22A124AFD00DE79BE /* NewPostForm.swift in Sources */,
