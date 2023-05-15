@@ -15,12 +15,23 @@ struct PostsList: View {
  
     var body: some View {
         NavigationView {
-               List(viewModel.posts) { post in
-                if searchText.isEmpty || post.contains(searchText) {
-                    PostRow(post: post)
+            Group{
+                switch viewModel.posts {
+                case .loading:
+                    ProgressView()
+                case .error(_):
+                    Text("Cannot Load Posts")
+                case .empty:
+                    Text("No Posts")
+                case let .loaded(posts):
+                    List(posts) { post in
+                        if searchText.isEmpty || post.contains(searchText) {
+                            PostRow(post: post)
+                        }
+                    }
+                    .searchable(text: $searchText)
                 }
             }
-            .searchable(text: $searchText)
             .navigationTitle("Posts")
             .toolbar {
                 Button {
@@ -34,6 +45,20 @@ struct PostsList: View {
             NewPostForm(createAction: viewModel.makeCreateAction())
         }.onAppear {
             viewModel.fetchPosts()
+        }
+    }
+}
+extension Loadable: Equatable where Value: Equatable {
+    static func == (lhs: Loadable<Value>, rhs: Loadable<Value>) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading):
+            return true
+        case let (.error(error1), .error(error2)):
+            return error1.localizedDescription == error2.localizedDescription
+        case let (.loaded(value1), .loaded(value2)):
+            return value1 == value2
+        default:
+            return false
         }
     }
 }
