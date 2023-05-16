@@ -28,10 +28,10 @@ struct CreateAccountForm: View {
  
     var body: some View {
         Form {
-            TextField("Name", text: $viewModel.name)
-            TextField("Email", text: $viewModel.email)
-            SecureField("Password", text: $viewModel.password)
-            Button("Create Account", action: viewModel.submit)
+            TextField("Name", text: $viewModel.name).textContentType(.name).textInputAutocapitalization(.words)
+            TextField("Email", text: $viewModel.email).textContentType(.emailAddress).textInputAutocapitalization(.never)
+            SecureField("Password", text: $viewModel.password).textContentType(.newPassword)
+            Button("Create Account", action: viewModel.submit).onSubmit(viewModel.submit)
         }
         .navigationTitle("Create Account")
     }
@@ -43,9 +43,9 @@ struct SignInForm<Footer: View>: View {
  
     var body: some View {
         Form {
-            TextField("Email", text: $viewModel.email)
-            SecureField("Password", text: $viewModel.password)
-            Button("Sign In", action: viewModel.submit)
+            TextField("Email", text: $viewModel.email).textContentType(.emailAddress).textInputAutocapitalization(.never)
+            SecureField("Password", text: $viewModel.password).textContentType(.password)
+            Button("Sign In", action: viewModel.submit).onSubmit(viewModel.submit)
             footer()
         }
         .navigationTitle("Sign In")
