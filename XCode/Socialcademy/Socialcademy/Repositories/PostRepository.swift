@@ -85,6 +85,13 @@ struct PostsRepository: PostsRepositoryProtocol {
     }
     
     func create(_ post: Post) async throws {
+        var post = post
+        if let imageFileURL = post.imageURL {
+            post.imageURL = try await StorageFile
+                .with(namespace: "posts", identifier: post.id.uuidString)
+                .putFile(from: imageFileURL)
+                .getDownloadURL()
+        }
         let document = postsReference.document(post.id.uuidString)
         try await document.setData(from: post)
     }
@@ -93,6 +100,8 @@ struct PostsRepository: PostsRepositoryProtocol {
         precondition(canDelete(post))
         let document = postsReference.document(post.id.uuidString)
         try await document.delete()
+        let image = post.imageURL.map(StorageFile.atURL(_:))
+        try await image?.delete()
     }
     
     func favorite(_ post: Post) async throws {
@@ -140,30 +149,5 @@ private extension Post {
         var post = self
         post[keyPath: property] = newValue
         return post
-    }
-}
-
-private extension DocumentReference {
-    func setData<T: Encodable>(from value: T) async throws {
-        return try await withCheckedThrowingContinuation { continuation in
-            // Method only throws if there’s an encoding error, which indicates a problem with our model.
-            // We handled this with a force try, while all other errors are passed to the completion handler.
-            try! setData(from: value) { error in
-                if let error = error {
-                    continuation.resume(throwing: error)
-                    return
-                }
-                continuation.resume()
-            }
-        }
-    }
-}
-
-private extension Query {
-    func getDocuments<T: Decodable>(as type: T.Type) async throws -> [T] {
-        let snapshot = try await getDocuments()
-        return snapshot.documents.compactMap { document in
-            try! document.data(as: type)
-        }
     }
 }

@@ -14,6 +14,8 @@ struct PostRow: View {
     
     @State private var showConfirmationDialog = false
     
+    @EnvironmentObject private var factory: ViewModelFactory
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -23,6 +25,9 @@ struct PostRow: View {
                     .font(.caption)
             }
             .foregroundColor(.gray)
+            if let imageURL = viewModel.imageURL {
+                PostImage(url: imageURL)
+            }
             Text(viewModel.title)
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -31,6 +36,12 @@ struct PostRow: View {
                 FavoriteButton(isFavorite: viewModel.isFavorite, action: {
                     viewModel.favoritePost()
                 })
+                NavigationLink {
+                    CommentsList(viewModel: factory.makeCommentsViewModel(for: viewModel.post))
+                } label: {
+                    Label("Comments", systemImage: "text.bubble")
+                        .foregroundColor(.secondary)
+                }
                 Spacer()
                 if viewModel.canDeletePost {
                     Button(role: .destructive, action: {
@@ -64,9 +75,32 @@ private extension PostRow {
             NavigationLink {
                 PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
             } label: {
-                Text(author.name)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                HStack {
+                    ProfileImage(url: author.imageURL)
+                        .frame(width: 32, height: 32)
+                    Text(author.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                }
+            }
+        }
+    }
+}
+
+// MARK: - PostImage
+
+private extension PostRow {
+    struct PostImage: View {
+        let url: URL
+        
+        var body: some View {
+            AsyncImage(url: url) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            } placeholder: {
+                Color.clear
             }
         }
     }
