@@ -11,7 +11,7 @@ struct EmptyListView: View {
     let title: String
     let message: String
     var retryAction: (() -> Void)?
- 
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text(title)

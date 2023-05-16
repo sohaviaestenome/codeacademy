@@ -9,20 +9,21 @@ import FirebaseAuth
 
 @MainActor
 class AuthService: ObservableObject {
-    @Published var isAuthenticated = false
+    @Published var user: User?
     
     private let auth = Auth.auth()
     private var listener: AuthStateDidChangeListenerHandle?
     
     init() {
         listener = auth.addStateDidChangeListener { [weak self] _, user in
-            self?.isAuthenticated = user != nil
+            self?.user = user.map(User.init(from:))
         }
     }
     
     func createAccount(name: String, email: String, password: String) async throws {
         let result = try await auth.createUser(withEmail: email, password: password)
         try await result.user.updateProfile(\.displayName, to: name)
+        user?.name = name
     }
     
     func signIn(email: String, password: String) async throws {
@@ -34,6 +35,13 @@ class AuthService: ObservableObject {
     }
 }
 
+private extension User {
+    init(from firebaseUser: FirebaseAuth.User) {
+        self.id = firebaseUser.uid
+        self.name = firebaseUser.displayName ?? ""
+    }
+}
+
 private extension FirebaseAuth.User {
     func updateProfile<T>(_ keyPath: WritableKeyPath<UserProfileChangeRequest, T>, to newValue: T) async throws {
         var profileChangeRequest = createProfileChangeRequest()
@@ -41,4 +49,3 @@ private extension FirebaseAuth.User {
         try await profileChangeRequest.commitChanges()
     }
 }
-
