@@ -5,16 +5,15 @@
 //  Created by Pedro Silva on 16/05/2023.
 //
 
-import Foundation
 import FirebaseAuth
- 
+
 @MainActor
 class AuthService: ObservableObject {
     @Published var isAuthenticated = false
- 
+    
     private let auth = Auth.auth()
     private var listener: AuthStateDidChangeListenerHandle?
- 
+    
     init() {
         listener = auth.addStateDidChangeListener { [weak self] _, user in
             self?.isAuthenticated = user != nil
@@ -42,3 +41,4 @@ private extension FirebaseAuth.User {
         try await profileChangeRequest.commitChanges()
     }
 }
+

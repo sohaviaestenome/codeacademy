@@ -34,6 +34,7 @@
 		0EF7056A2A12FF2F00A7DEEF /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF705692A12FF2F00A7DEEF /* AuthView.swift */; };
 		0EF7056C2A1300D700A7DEEF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7056B2A1300D700A7DEEF /* ProfileView.swift */; };
 		0EF7056E2A1302E200A7DEEF /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7056D2A1302E200A7DEEF /* FormViewModel.swift */; };
+		0EF705702A130E8600A7DEEF /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7056F2A130E8600A7DEEF /* PrimaryButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		0EF705692A12FF2F00A7DEEF /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthView.swift; path = Socialcademy/ViewModels/AuthView.swift; sourceTree = SOURCE_ROOT; };
 		0EF7056B2A1300D700A7DEEF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Socialcademy/ViewModels/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		0EF7056D2A1302E200A7DEEF /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		0EF7056F2A130E8600A7DEEF /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			children = (
 				0E8782D32A1282BF00B2D53D /* EmptyListView.swift */,
 				0E8782D62A12928900B2D53D /* ErrorAlertViewModifier.swift */,
+				0EF7056F2A130E8600A7DEEF /* PrimaryButtonStyle.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF705702A130E8600A7DEEF /* PrimaryButtonStyle.swift in Sources */,
 				0E16F9AC2A12AB07008FF033 /* PostRowViewModel.swift in Sources */,
 				0E1CD7C52A125A8000DE79BE /* PostViewModel.swift in Sources */,
 				0EB0C6472A1194B9005BB769 /* Post.swift in Sources */,
