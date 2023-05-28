@@ -11,6 +11,7 @@
 		0E5CEEBD2A23B49C009550D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CEEBC2A23B49C009550D4 /* ContentView.swift */; };
 		0E5CEEBF2A23B49D009550D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5CEEBE2A23B49D009550D4 /* Assets.xcassets */; };
 		0E5CEEC22A23B49D009550D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5CEEC12A23B49D009550D4 /* Preview Assets.xcassets */; };
+		0E5CEEC92A23B613009550D4 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CEEC82A23B613009550D4 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		0E5CEEBC2A23B49C009550D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E5CEEBE2A23B49D009550D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E5CEEC12A23B49D009550D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E5CEEC82A23B613009550D4 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				0E5CEEBA2A23B49C009550D4 /* UIViewControllerRepresentableProjectApp.swift */,
+				0E5CEEC82A23B613009550D4 /* ImagePickerView.swift */,
 				0E5CEEBC2A23B49C009550D4 /* ContentView.swift */,
 				0E5CEEBE2A23B49D009550D4 /* Assets.xcassets */,
 				0E5CEEC02A23B49D009550D4 /* Preview Content */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5CEEBD2A23B49C009550D4 /* ContentView.swift in Sources */,
+				0E5CEEC92A23B613009550D4 /* ImagePickerView.swift in Sources */,
 				0E5CEEBB2A23B49C009550D4 /* UIViewControllerRepresentableProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
